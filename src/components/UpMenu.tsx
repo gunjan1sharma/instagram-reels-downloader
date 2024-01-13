@@ -205,7 +205,7 @@ function UpMenu(props: any) {
 
         <div className="flex items-center justify-center">
           <img alt="" src={LogoImage} className="w-10 h-10 md:w-14 md:h-14" />
-          <Link to="https://instagramvideo-downloader.netlify.app">
+          <Link to="https://instagramreels-downloader.web.app">
             <h1
               style={{ color: headingColor }}
               className="p-5 text-center font-bold text-sm sm:text-4xl"

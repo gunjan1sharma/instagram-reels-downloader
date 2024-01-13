@@ -38,18 +38,30 @@ function Footer(props: any) {
 
         <div className="w-100%">
           <div className="p-5 container grid grid-cols-3 md:grid-cols-4 gap-2 w-full">
-            {heading("Youtube Video", "https://seo-scrapers.web.app")}
-            {heading("Youtube Audio", "https://links-scrapper.web.app")}
-            {heading("Youtube Shorts", "https://images-scrapper.web.app")}
-            {heading("Youtube Thumbnail", "https://medias-scrapper.web.app")}
+            {heading(
+              "Youtube Video",
+              "https://youtubevideo-downloader.netlify.app"
+            )}
+            {heading(
+              "Youtube Audio",
+              "https://youtubeaudio-downloader.netlify.app"
+            )}
+            {heading(
+              "Youtube Shorts",
+              "https://youtubeshorts-downloader.netlify.app"
+            )}
+            {heading(
+              "Youtube Thumbnail",
+              "https://youtubethumbnail-downloader.netlify.app"
+            )}
 
-            {heading("Facebook Video", "https://javascript-scrapper.web.app")}
-            {heading("Facebook Shorts", "https://semantic-scrapper.web.app")}
-            {heading("Facebook Thumbnail", "https://keywords-lookup.web.app")}
+            {heading("Facebook Video", "https://facebookvideo-downloader.web.app")}
+            {heading("Facebook Shorts", "https://facebook-shorts.web.app")}
+            {heading("Facebook Thumbnail", "https://facebook-thumbnail.web.app")}
 
-            {heading("Instagram Video", "https://website-scrappers.web.app")}
-            {heading("Instagram Audio", "https://site-screenshot.web.app")}
-            {heading("Instagram Reels", "https://ultimate-picker.web.app")}
+            {heading("Instagram Video", "https://instagramvideo-downloader.web.app")}
+            {heading("Instagram Reels", "https://instagramreels-downloader.web.app")}
+            {heading("Instagram Thumbnail", "https://instagram-thumbnail.web.app")}
 
             {heading("Whois Lookup", "https://whois-lookups.web.app")}
             {heading("Geolocation Data", "https://geolocationq.web.app")}
