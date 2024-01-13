@@ -39,6 +39,13 @@ export interface IPGeolocationResponse {
   premium: boolean;
 }
 
+export interface SimpleIntroProps {
+  tag?: string;
+  heading: string;
+  subtitle: string;
+  btntext: string;
+}
+
 export type ResponseKeyValueArray = [string, any][];
 
 export interface Root {

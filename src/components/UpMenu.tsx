@@ -2,6 +2,7 @@ import React, {
   MouseEventHandler,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import {
@@ -14,7 +15,6 @@ import {
   InputAdornment,
   InputBaseClasses,
   InputLabel,
-  Link,
   List,
   Menu,
   MenuItem,
@@ -27,6 +27,7 @@ import LogoImage from "../assets/images/instagram.png";
 import { ColorContext } from "../extras/ColorContext";
 import MenuIcon from "@mui/icons-material/Menu";
 import SingleColor from "./SingleColor";
+import { Link } from "react-router-dom";
 
 const Wrapper = `
   position: fixed;
@@ -49,30 +50,10 @@ const Wrapper = `
   justify-content: space-between; */
 `;
 
-const hexColors: string[] = [
-  "#E91E63", // Pink
-  "#9C27B0", // Purple
-  "#673AB7", // Deep Purple
-  "#3F51B5", // Indigo
-  "#2196F3", // Blue
-  "#03A9F4", // Light Blue
-  "#00BCD4", // Cyan
-  "#009688", // Teal
-  "#4CAF50", // Green
-  "#8BC34A", // Light Green
-  "#CDDC39", // Lime
-  "#FFEB3B", // Yellow
-  "#FFC107", // Amber
-  "#FF9800", // Orange
-  "#FF5722", // Deep Orange
-  "#795548", // Brown
-  "#9E9E9E", // Grey
-  "#607D8B", // Blue Grey
-  "#F44336", // Red
-  "#E53935", // Red
-];
+const hexColors: string[] = ["#FCC52F", "#A11CAF", "#FE9059"];
 
 function UpMenu(props: any) {
+  const headerRef = useRef<any>(null);
   const [headingColor, setHeadingColor] = useState("");
   const [deleted, setDeleted] = useState(false);
   const { color, setColor } = useContext(ColorContext);
@@ -108,8 +89,35 @@ function UpMenu(props: any) {
   }
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const header = headerRef.current;
+      if (scrollPosition >= window.innerHeight / 3) {
+        header.classList.add("fixed", "top-0", "z-50", "bg-white");
+        header.classList.remove(
+          "bg-gradient-to-r",
+          "from-yellow-200",
+          "via-gray-100",
+          "to-yellow-200"
+        );
+      }
+      if (scrollPosition === 0) {
+        header.classList.remove("fixed", "top-0");
+        header.classList.add(
+          "bg-gradient-to-r",
+          "from-yellow-200",
+          "via-gray-100",
+          "to-yellow-200"
+        );
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     const id = updateColor();
-    console.log("useEffect called in [UpMenu]");
     const storedColors = fetchPersistedNotes();
     setPersistedNotes(storedColors);
     return () => clearInterval(id);
@@ -185,9 +193,10 @@ function UpMenu(props: any) {
 
   return (
     <div>
-      {/* {drawer} */}
-
-      <div className="w-full flex items-center justify-between border shadow-md">
+      <div
+        ref={headerRef}
+        className="w-full flex items-center justify-between shadow-md bg-gradient-to-r from-yellow-200 via-gray-100 to-yellow-200"
+      >
         <div>
           <IconButton onClick={() => setOpen(true)}>
             <MenuIcon className="ml-2 md:ml-6" fontSize="large" />
@@ -195,17 +204,15 @@ function UpMenu(props: any) {
         </div>
 
         <div className="flex items-center justify-center">
-          <img
-            alt=""
-            src={LogoImage}
-            className="w-10 h-10 md:w-14 md:h-14"
-          />
-          <h1
-            style={{ color: headingColor }}
-            className="p-5 text-center font-sans text-sm md:text-4xl font-extrabold"
-          >
-           Instagram Reels Downloader+
-          </h1>
+          <img alt="" src={LogoImage} className="w-10 h-10 md:w-14 md:h-14" />
+          <Link to="https://instagramvideo-downloader.netlify.app">
+            <h1
+              style={{ color: headingColor }}
+              className="p-5 text-center font-bold text-sm sm:text-4xl"
+            >
+              Instagram Reels
+            </h1>
+          </Link>
         </div>
 
         <div></div>

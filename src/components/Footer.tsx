@@ -16,7 +16,10 @@ function Footer(props: any) {
   function heading(heading: string, url: string): JSX.Element {
     return (
       <Link to={url}>
-        <h5 style={{ fontSize: "13px" }} className="text-white text-centre">
+        <h5
+          style={{ fontSize: "13px" }}
+          className="text-white text-centre ml-5 mt-2 sm:mt-2"
+        >
           {heading}
         </h5>
       </Link>
@@ -29,56 +32,55 @@ function Footer(props: any) {
         <div className="w-full m-5 flex items-center justify-center">
           <img alt="" src={LogoImage} className="w-7 h-7" />
           <h1 className="text-center ml-4 text-white text-xl font-bold">
-            Instagram Reels Downloader+
+            Instagram Reels
           </h1>
         </div>
 
         <div className="w-100%">
           <div className="p-5 container grid grid-cols-3 md:grid-cols-4 gap-2 w-full">
-            {heading(
-              "Youtube Video Downloader",
-              "https://youtubevideo-downloader.netlify.app"
-            )}
-            {heading(
-              "Youtube Audio Downloader",
-              "https://youtubeaudio-downloader.netlify.app"
-            )}
-            {heading(
-              "Youtube Shorts Downloader",
-              "https://youtubeshorts-downloader.app"
-            )}
-            {heading(
-              "Youtube Thumbnail Downloader",
-              "https://youtubethumbnail-downloader.netlify.app"
-            )}
+            {heading("Youtube Video", "https://seo-scrapers.web.app")}
+            {heading("Youtube Audio", "https://links-scrapper.web.app")}
+            {heading("Youtube Shorts", "https://images-scrapper.web.app")}
+            {heading("Youtube Thumbnail", "https://medias-scrapper.web.app")}
 
-            {heading(
-              "Facebook Video Downloader",
-              "https://facebookvideo-downloader.netlify.app"
-            )}
-            {heading(
-              "Facebook Audio Downloader",
-              "https://facebookaudio-downloader.netlify.app"
-            )}
-            {heading(
-              "Facebook Thumbnail Downloader",
-              "https://facebookthumbnail-downloader.netlify.app"
-            )}
+            {heading("Facebook Video", "https://javascript-scrapper.web.app")}
+            {heading("Facebook Shorts", "https://semantic-scrapper.web.app")}
+            {heading("Facebook Thumbnail", "https://keywords-lookup.web.app")}
 
-            {heading(
-              "Instagram Video Downloader",
-              "https://instagramvideo-downloader.netlify.app"
-            )}
-            {heading(
-              "Instagram Audio Downloader",
-              "https://instagramaudio-downloader.netlify.app"
-            )}
-            {heading(
-              "Instagram Thumbnail Downloader",
-              "https://instagramthumbnail-downloader.netlify.app"
-            )}
+            {heading("Instagram Video", "https://website-scrappers.web.app")}
+            {heading("Instagram Audio", "https://site-screenshot.web.app")}
+            {heading("Instagram Reels", "https://ultimate-picker.web.app")}
+
+            {heading("Whois Lookup", "https://whois-lookups.web.app")}
+            {heading("Geolocation Data", "https://geolocationq.web.app")}
+            {heading("Seo Parser", "https://seo-scrapers.web.app")}
+            {heading("Link Scrapper", "https://links-scrapper.web.app")}
+            {heading("Images Scrapper", "https://images-scrapper.web.app")}
+            {heading("Media Scrapper", "https://medias-scrapper.web.app")}
+
+            {heading("Script Scrapper", "https://javascript-scrapper.web.app")}
+            {heading("Semantic Parser", "https://semantic-scrapper.web.app")}
+            {heading("Keyword Lookup", "https://keywords-lookup.web.app")}
           </div>
         </div>
+
+        <br />
+        <div className="border p-2 border-dashed border-gray-400">
+          <Link to="https://www.geekforce.in" target="_blank">
+            <h4 className="text-white text-xs">
+              A Product From GeekForce Technologies
+            </h4>
+          </Link>
+          <Link
+            target="_blank"
+            to="https://www.linkedin.com/in/gunjan-sharma-a74332251/"
+          >
+            <h4 className="text-white text-xs mt-1">
+              Owned & Envisoned By Gunjan Sharma
+            </h4>
+          </Link>
+        </div>
+        <br />
 
         <div className="m-4">
           <h5 className="text-center text-white font-sans text-xs font-bold">
